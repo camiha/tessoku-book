@@ -2,26 +2,16 @@
 using namespace std;
 
 int main() {
-    int N, K, P[100], Q[100];
-    cin >> N >> K;
+    int N;
+    cin >> N;
 
-    for (int i = 0; i < N; i++) {
-        cin >> P[i];
+    for (int i = 9; i >= 0; i--) {
+        int temp = (1 << i);
+        int current = (N / temp) % 2;
+
+        cout << current;
     }
 
-    for (int i = 0; i < N; i++) {
-        cin >> Q[i];
-    }
-
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            if (P[i] + Q[j] == K) {
-                cout << "Yes" << endl;
-                return 0;
-            }
-        }
-    }
-
-    cout << "No" << endl;
+    cout << endl;
     return 0;
 }
